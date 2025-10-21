@@ -1,0 +1,26 @@
+.number-button {
+    margin: 0px;
+    padding: 5px 10px;
+    border: 0.1px solid rgb(209, 209, 209);
+    border-radius: 3px;
+    color: black;
+    background-color: rgb(238, 238, 238);
+    font-size: 30px;
+}
+
+.number-button:hover {
+    background-color: rgb(231, 230, 230);
+}
+
+.number-button:active {
+    color: rgb(38, 38, 38);
+    background-color: rgb(213, 213, 213);
+}
+
+.number-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    height: 600px;
+    width: 500px;
+}
