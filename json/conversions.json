@@ -4,12 +4,12 @@
     "base": "meters",
     "units": {
       "meters": { "name": "Meters", "factor": 1 },
+      "feet":  { "name": "Feet", "factor": 0.3048 },
       "nanometers": { "name": "Nanometers", "factor": 1e-9 },
       "micrometers": { "name": "Micrometers", "factor": 1e-6 },
       "millimeters": { "name": "Millimeters", "factor": 0.001 },
       "centimeters": { "name": "Centimeters", "factor": 0.01 },
       "kilometers": { "name": "Kilometers", "factor": 1000 },
-      "feet":  { "name": "Feet", "factor": 0.3048 },
       "inches":  { "name": "Inches", "factor": 0.0254 },
       "yards":  { "name": "Yards", "factor": 0.9144 },
       "miles":  { "name": "Miles", "factor": 1609.344 },
@@ -25,6 +25,10 @@
         "name": "Cubic Meters",
         "factor": 1000
       },
+      "liters": {
+        "name": "Liters",
+        "factor": 1
+      },
       "cubic-millimeters": {
         "name": "Cubic Millimeters",
         "factor": 0.000001
@@ -33,11 +37,6 @@
         "name": "Milliliters",
         "factor": 0.001
       },
-      "liters": {
-        "name": "Liters",
-        "factor": 1
-      },
-
       "fluid-ounces-us": {
         "name": "Fluid Ounces (US)",
         "factor": 0.0295735
@@ -69,6 +68,10 @@
         "name": "Kilograms",
         "factor": 1
       },
+      "pound": {
+        "name": "Pounds",
+        "factor": 0.453592
+      },
       "milligram": {
         "name": "Milligrams",
         "factor": 0.000001
@@ -77,7 +80,6 @@
         "name": "Grams",
         "factor": 0.001
       },
-
       "ton-metric": {
         "name": "Tons",
         "factor": 1000
@@ -85,10 +87,6 @@
       "ounce": {
         "name": "Ounces",
         "factor": 0.0283495
-      },
-      "pound": {
-        "name": "Pounds",
-        "factor": 0.453592
       }
     }
   },
@@ -101,6 +99,10 @@
         "name": "Joules",
         "factor": 1
       },
+      "kilowatt-hour": {
+        "name": "Kilowatt-hours",
+        "factor": 3600000
+      },
       "kilojoule": {
         "name": "Kilojoules",
         "factor": 1000
@@ -112,10 +114,6 @@
       "calorie-food": {
         "name": "Calories (Food)",
         "factor": 4184
-      },
-      "kilowatt-hour": {
-        "name": "Kilowatt-hours",
-        "factor": 3600000
       }
     }
   },
@@ -126,6 +124,10 @@
       "square-meter": {
         "name": "Square Meters",
         "factor": 1
+      },
+      "acre": {
+        "name": "Acres",
+        "factor": 4046.86
       },
       "square-millimeter": {
         "name": "Square Millimeters",
@@ -151,10 +153,6 @@
         "name": "Square Yards",
         "factor": 0.836127
       },
-      "acre": {
-        "name": "Acres",
-        "factor": 4046.86
-      },
       "square-mile": {
         "name": "Square Miles",
         "factor": 2589988
@@ -169,13 +167,13 @@
         "name": "Meters/Second",
         "factor": 1
       },
-      "cm/s": {
-        "name": "Centimeters/Second",
-        "factor": 0.01
-      },
       "km/h": {
         "name": "Kilometers/Hour",
         "factor": 0.277778
+      },
+      "cm/s": {
+        "name": "Centimeters/Second",
+        "factor": 0.01
       },
       "ft/s": {
         "name": "Feet/Second",
@@ -199,6 +197,10 @@
         "name": "Seconds",
         "factor": 1
       },
+      "minute": {
+        "name": "Minutes",
+        "factor": 60
+      },
       "microsecond": {
         "name": "Microseconds",
         "factor": 1e-6
@@ -206,10 +208,6 @@
       "millisecond": {
         "name": "Milliseconds",
         "factor": 0.001
-      },
-      "minute": {
-        "name": "Minutes",
-        "factor": 60
       },
       "hour": {
         "name": "Hours",
@@ -237,13 +235,13 @@
         "name": "Kilowatts",
         "factor": 1
       },
+      "horsepower": {
+      "name": "Horsepower",
+      "factor": 0.7457
+      },
       "watt": {
         "name": "Watts",
         "factor": 0.001
-      },
-      "horsepower": {
-        "name": "Horsepower",
-        "factor": 0.7457
       }
     }
   },
