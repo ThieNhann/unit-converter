@@ -1,11 +1,17 @@
+body {
+    background-color:rgb(240, 244, 245);
+}
+
 .number-button {
     margin: 0px;
     padding: 5px 10px;
     border: 0.1px solid rgb(209, 209, 209);
     border-radius: 3px;
     color: black;
-    background-color: rgb(238, 238, 238);
-    font-size: 40px;
+    background-color: rgb(255, 255, 255);
+    font-size: 55px;
+    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-weight: 900;
 }
 
 .number-button:hover {
@@ -23,4 +29,16 @@
     gap: 3px;
     height: 600px;
     width: 800px;
+}
+
+#input-number {
+    font-size: 55px;
+    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-weight: 900;
+}
+
+#result-number {
+    font-size: 55px;
+    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-weight: 200;
 }

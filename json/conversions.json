@@ -79,7 +79,7 @@
       },
 
       "ton-metric": {
-        "name": "Tons (Metric)",
+        "name": "Tons",
         "factor": 1000
       },
       "ounce": {
@@ -186,7 +186,7 @@
         "factor": 1609.344
       },
       "mach": {
-        "name": "Mach (Speed of Sound)",
+        "name": "Mach",
         "factor": 343
       }
     }
@@ -224,7 +224,7 @@
         "factor": 604800
       },
       "year": {
-        "name": "Years (Gregorian)",
+        "name": "Years",
         "factor": 31556952
       }
     }
@@ -242,7 +242,7 @@
         "factor": 0.001
       },
       "horsepower": {
-        "name": "Horsepower (Mechanical)",
+        "name": "Horsepower",
         "factor": 0.7457
       }
     }
@@ -260,35 +260,35 @@
         "factor": 1
       },
       "kilobyte": {
-        "name": "Kilobytes (1000 B)",
+        "name": "Kilobytes",
         "factor": 1000
       },
       "megabyte": {
-        "name": "Megabytes (1000 KB)",
+        "name": "Megabytes",
         "factor": 1000000
       },
       "gigabyte": {
-        "name": "Gigabytes (1000 MB)",
+        "name": "Gigabytes",
         "factor": 1e9
       },
       "terabyte": {
-        "name": "Terabytes (1000 GB)",
+        "name": "Terabytes",
         "factor": 1e12
       },
       "petabyte": {
-        "name": "Petabytes (1000 TB)",
+        "name": "Petabytes",
         "factor": 1e15
       },
       "exabyte": {
-        "name": "Exabytes (1000 PB)",
+        "name": "Exabytes",
         "factor": 1e18
       },
       "zettabyte": {
-        "name": "Zettabytes (1000 EB)",
+        "name": "Zettabytes",
         "factor": 1e21
       },
       "yottabyte": {
-        "name": "Yottabytes (1000 ZB)",
+        "name": "Yottabytes",
         "factor": 1e24
       }
     }
@@ -298,19 +298,19 @@
     "base": "atmosphere",
     "units": {
       "atmosphere": {
-        "name": "Atmospheres (atm)",
+        "name": "Atmospheres",
         "factor": 1
       },
       "pascal": {
-        "name": "Pascals (Pa)",
+        "name": "Pascals",
         "factor": 101325
       },
       "kilopascal": {
-        "name": "Kilopascals (kPa)",
+        "name": "Kilopascals",
         "factor": 101.325
       },
       "mmhg": {
-        "name": "Millimeters of Mercury (mmHg)",
+        "name": "Millimeters of Mercury",
         "factor": 760
       },
       "bar": {
@@ -318,7 +318,7 @@
         "factor": 1.01325
       },
       "psi": {
-        "name": "Pounds per Square Inch (psi)",
+        "name": "Pounds per Square Inch",
         "factor": 14.6959
       }
     }

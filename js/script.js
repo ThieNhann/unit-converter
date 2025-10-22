@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const buttonText = button.innerText;
 
-            if (buttonText == 'Reset') {
+            if (buttonText == 'AC') {
                 rawInputString = '0';
             } 
-            else if (buttonText == 'Back') {
+            else if (buttonText == 'B') {
                 if (rawInputString.length > 1) {
                     rawInputString = rawInputString.substring(0, rawInputString.length - 1);
                 } else {

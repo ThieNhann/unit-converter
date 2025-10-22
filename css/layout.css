@@ -14,14 +14,17 @@
     flex-direction: column;
     justify-content: space-around;
     font-size: 40px;
+    font-weight: 100;
 }
 
+
 select {
-    width: 200px;
+    width: 150px;
     padding: 5px;
     font-size: 15px;
     border: 1px solid rgb(100, 100, 100);
-    text-align: center;
+    text-align: left;
+    
 }
 
 select:hover {
@@ -32,3 +35,4 @@ select option {
     border: 1px solid rgb(249, 249, 249);
     border-radius: 6px;
 }
+
