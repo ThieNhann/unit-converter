@@ -9,8 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultNumberEl = document.getElementById('result-number');
     const buttons = document.querySelectorAll('.number-button');
 
+    const switchButton = document.getElementById('switch-button')
     let rawInputString = '0';
     const displayLocale = 'de-DE';
+
+    function switchUnit() {
+        let fromIndex = fromSelect.selectedIndex;
+        let toIndex = toSelect.selectedIndex;
+        fromSelect.selectedIndex = toIndex;
+        toSelect.selectedIndex = fromIndex;
+        updateDisplay();
+    }
 
     function getConversionResult(numericValue) {
         if (!conversionData) return 0;
@@ -151,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         fromSelect.addEventListener('change', updateDisplay);
         toSelect.addEventListener('change', updateDisplay);
+        switchButton.addEventListener('click', switchUnit);
 
     } catch (error) {
         console.error('Lỗi khi khởi tạo từ data:', error);
