@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let resultNumberEl = document.getElementById('result-number');
     let buttons = document.querySelectorAll('.number-button');
 
-    const convert = 0.3048;
+    const factor = 0.3048;
     
     let rawInputString = '0'; 
 
@@ -27,10 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             displayInput = numericValue.toLocaleString(displayLocale);
         }
         
-        let resultValue = (numericValue * convert);
-        let displayResult = resultValue.toLocaleString(displayLocale, { 
-            maximumFractionDigits: 6
-        });
+        let resultValue = (numericValue * factor);
+        let displayResult = resultValue.toLocaleString(displayLocale);
 
         inputNumberEl.innerText = displayInput;
         resultNumberEl.innerText = displayResult;
@@ -64,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     rawInputString += buttonText;
                 }
             }
-            
             updateDisplay();
         });
     });

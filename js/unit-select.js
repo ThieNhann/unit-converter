@@ -28,13 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadCategories(data) {
         const categories = Object.keys(data);
         categories.forEach(key => {
-            //Category options
+
             let categoryOption = document.createElement('option');
             categoryOption.text = data[key].name;
             categoryOption.value = key;
             categorySelect.appendChild(categoryOption);
         })
     }
+
 
     function updateSelectors(data) {
         const selectedCategory = categorySelect.value;
