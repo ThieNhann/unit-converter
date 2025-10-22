@@ -1,36 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let inputNumber = document.getElementById('input-number');
-    let resultNumber = document.getElementById('result-number');
-
+    let inputNumberEl = document.getElementById('input-number');
+    let resultNumberEl = document.getElementById('result-number');
     let buttons = document.querySelectorAll('.number-button');
 
-    let convert = 0.3048;
+    const convert = 0.3048;
+    
+    let rawInputString = '0'; 
+
+    const displayLocale = 'de-DE'; 
+
+    function updateDisplay() {
+        let numericValue = parseFloat(rawInputString);
+        if (isNaN(numericValue)) {
+            numericValue = 0;
+        }
+
+        let displayInput;
+        if (rawInputString.endsWith('.')) {
+            let integerPart = Math.floor(numericValue).toLocaleString(displayLocale);
+            displayInput = integerPart + ',';
+        } else if (rawInputString.includes('.')) {
+            const parts = rawInputString.split('.');
+            const integerPart = (parseInt(parts[0]) || 0).toLocaleString(displayLocale);
+            displayInput = integerPart + ',' + parts[1];
+        } else {
+            displayInput = numericValue.toLocaleString(displayLocale);
+        }
+        
+        let resultValue = (numericValue * convert);
+        let displayResult = resultValue.toLocaleString(displayLocale, { 
+            maximumFractionDigits: 6
+        });
+
+        inputNumberEl.innerText = displayInput;
+        resultNumberEl.innerText = displayResult;
+    }
 
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
-            if (button.innerText == 'Reset') {
-                inputNumber.innerText = '0';
-                resultNumber.innerText ='0';
-                console.log('reset');
-                return;
-            }
-            if (inputNumber.innerText.length >= 19) return;
-            let value = (parseInt(button.innerText));
-            if (inputNumber.innerText == '0') {
-                inputNumber.innerText = value;
-                resultNumber.innerText = (Number(inputNumber.innerText) * convert).toLocaleString('en-US').replace(/,/g, '.'); 
-            }
-            else {
-                let rawNumber = inputNumber.innerText.replace(/\./g, '');
-                if (button.innerText == 'Back') {
-                    rawNumber = rawNumber.substring(0, rawNumber.length - 1);
+            const buttonText = button.innerText;
+
+            if (buttonText == 'Reset') {
+                rawInputString = '0';
+            } 
+            else if (buttonText == 'Back') {
+                if (rawInputString.length > 1) {
+                    rawInputString = rawInputString.substring(0, rawInputString.length - 1);
+                } else {
+                    rawInputString = '0';
                 }
-                else {
-                    rawNumber = rawNumber + value;
+            } 
+            else if (buttonText === ',' || buttonText === '.') { 
+                if (!rawInputString.includes('.')) {
+                    rawInputString += '.';
                 }
-                resultNumber.innerText = (Number(rawNumber) * convert).toLocaleString('en-US').replace(/,/g, '.'); 
-                inputNumber.innerText = Number(rawNumber).toLocaleString('en-US').replace(/,/g, '.');
+            } 
+            else if (!isNaN(parseInt(buttonText))) { 
+                if (rawInputString.length >= 15) return;
+
+                if (rawInputString == '0') {
+                    rawInputString = buttonText;
+                } else {
+                    rawInputString += buttonText;
+                }
             }
+            
+            updateDisplay();
         });
     });
+
+    updateDisplay();
 });
