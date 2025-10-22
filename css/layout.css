@@ -22,7 +22,7 @@ select {
     width: 150px;
     padding: 5px;
     font-size: 15px;
-    border: 1px solid rgb(100, 100, 100);
+    border: 0px solid rgb(100, 100, 100);
     text-align: left;
     
 }
@@ -39,6 +39,17 @@ select option {
 #switch-button {
     width: 40px;
     height: 30px;
+    background-color: white;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 5px;
+}
+
+#switch-button:hover {
+    background-color: rgb(249, 249, 249);
+}
+
+#switch-button:active {
+    background-color: rgb(240, 240, 240);
 }
 
 #switch-button img {
