@@ -1,17 +1,344 @@
 {
   "length": {
     "name": "Length",
-    "base": "meter",
+    "base": "meters",
     "units": {
-      "meter": { "name": "Meter", "factor": 1 },
-      "feet":  { "name": "Feet", "factor": 0.3048 }
+      "meters": { "name": "Meters", "factor": 1 },
+      "nanometers": { "name": "Nanometers", "factor": 1e-9 },
+      "micrometers": { "name": "Micrometers", "factor": 1e-6 },
+      "millimeters": { "name": "Millimeters", "factor": 0.001 },
+      "centimeters": { "name": "Centimeters", "factor": 0.01 },
+      "kilometers": { "name": "Kilometers", "factor": 1000 },
+      "feet":  { "name": "Feet", "factor": 0.3048 },
+      "inches":  { "name": "Inches", "factor": 0.0254 },
+      "yards":  { "name": "Yards", "factor": 0.9144 },
+      "miles":  { "name": "Miles", "factor": 1609.344 },
+      "nautical miles":  { "name": "Nautical miles", "factor": 1852 }
     }
   },
+
   "volume": {
     "name": "Volume",
     "base": "liter",
     "units": {
-      "liter": { "name": "Liter", "factor": 1 }
+        "cubic-meters": {
+        "name": "Cubic Meters",
+        "factor": 1000
+      },
+      "cubic-millimeters": {
+        "name": "Cubic Millimeters",
+        "factor": 0.000001
+      },
+      "milliliters": {
+        "name": "Milliliters",
+        "factor": 0.001
+      },
+      "liters": {
+        "name": "Liters",
+        "factor": 1
+      },
+
+      "fluid-ounces-us": {
+        "name": "Fluid Ounces (US)",
+        "factor": 0.0295735
+      },
+      "gallons-us": {
+        "name": "Gallons (US)",
+        "factor": 3.78541
+      },
+      "cubic-inches": {
+        "name": "Cubic Inches",
+        "factor": 0.0163871
+      },
+      "cubic-feet": {
+        "name": "Cubic Feet",
+        "factor": 28.3168
+      },
+      "cubic-yards": {
+        "name": "Cubic Yards",
+        "factor": 764.555
+      }
+    }
+  },
+
+  "mass": {
+    "name": "Weight & Mass",
+    "base": "kilogram",
+    "units": {
+      "kilogram": {
+        "name": "Kilograms",
+        "factor": 1
+      },
+      "milligram": {
+        "name": "Milligrams",
+        "factor": 0.000001
+      },
+      "gram": {
+        "name": "Grams",
+        "factor": 0.001
+      },
+
+      "ton-metric": {
+        "name": "Tons (Metric)",
+        "factor": 1000
+      },
+      "ounce": {
+        "name": "Ounces",
+        "factor": 0.0283495
+      },
+      "pound": {
+        "name": "Pounds",
+        "factor": 0.453592
+      }
+    }
+  },
+
+  "energy": {
+    "name": "Energy",
+    "base": "joule",
+    "units": {
+      "joule": {
+        "name": "Joules",
+        "factor": 1
+      },
+      "kilojoule": {
+        "name": "Kilojoules",
+        "factor": 1000
+      },
+      "calorie-thermal": {
+        "name": "Calories (Thermal)",
+        "factor": 4.184
+      },
+      "calorie-food": {
+        "name": "Calories (Food)",
+        "factor": 4184
+      },
+      "kilowatt-hour": {
+        "name": "Kilowatt-hours",
+        "factor": 3600000
+      }
+    }
+  },
+  "area": {
+    "name": "Area",
+    "base": "square-meter",
+    "units": {
+      "square-meter": {
+        "name": "Square Meters",
+        "factor": 1
+      },
+      "square-millimeter": {
+        "name": "Square Millimeters",
+        "factor": 0.000001
+      },
+      "square-centimeter": {
+        "name": "Square Centimeters",
+        "factor": 0.0001
+      },
+      "hectare": {
+        "name": "Hectares",
+        "factor": 10000
+      },
+      "square-kilometer": {
+        "name": "Square Kilometers",
+        "factor": 1000000
+      },
+      "square-foot": {
+        "name": "Square Feet",
+        "factor": 0.092903
+      },
+      "square-yard": {
+        "name": "Square Yards",
+        "factor": 0.836127
+      },
+      "acre": {
+        "name": "Acres",
+        "factor": 4046.86
+      },
+      "square-mile": {
+        "name": "Square Miles",
+        "factor": 2589988
+      }
+    }
+  },
+  "speed": {
+    "name": "Speed",
+    "base": "m/s",
+    "units": {
+      "m/s": {
+        "name": "Meters/Second",
+        "factor": 1
+      },
+      "cm/s": {
+        "name": "Centimeters/Second",
+        "factor": 0.01
+      },
+      "km/h": {
+        "name": "Kilometers/Hour",
+        "factor": 0.277778
+      },
+      "ft/s": {
+        "name": "Feet/Second",
+        "factor": 0.3048
+      },
+      "mi/s": {
+        "name": "Miles/Second",
+        "factor": 1609.344
+      },
+      "mach": {
+        "name": "Mach (Speed of Sound)",
+        "factor": 343
+      }
+    }
+  },
+  "time": {
+    "name": "Time",
+    "base": "second",
+    "units": {
+      "second": {
+        "name": "Seconds",
+        "factor": 1
+      },
+      "microsecond": {
+        "name": "Microseconds",
+        "factor": 1e-6
+      },
+      "millisecond": {
+        "name": "Milliseconds",
+        "factor": 0.001
+      },
+      "minute": {
+        "name": "Minutes",
+        "factor": 60
+      },
+      "hour": {
+        "name": "Hours",
+        "factor": 3600
+      },
+      "day": {
+        "name": "Days",
+        "factor": 86400
+      },
+      "week": {
+        "name": "Weeks",
+        "factor": 604800
+      },
+      "year": {
+        "name": "Years (Gregorian)",
+        "factor": 31556952
+      }
+    }
+  },
+  "power": {
+    "name": "Power",
+    "base": "kilowatt",
+    "units": {
+      "kilowatt": {
+        "name": "Kilowatts",
+        "factor": 1
+      },
+      "watt": {
+        "name": "Watts",
+        "factor": 0.001
+      },
+      "horsepower": {
+        "name": "Horsepower (Mechanical)",
+        "factor": 0.7457
+      }
+    }
+  },
+  "data": {
+    "name": "Data",
+    "base": "byte",
+    "units": {
+      "bit": {
+        "name": "Bits",
+        "factor": 0.125
+      },
+      "byte": {
+        "name": "Bytes",
+        "factor": 1
+      },
+      "kilobyte": {
+        "name": "Kilobytes (1000 B)",
+        "factor": 1000
+      },
+      "megabyte": {
+        "name": "Megabytes (1000 KB)",
+        "factor": 1000000
+      },
+      "gigabyte": {
+        "name": "Gigabytes (1000 MB)",
+        "factor": 1e9
+      },
+      "terabyte": {
+        "name": "Terabytes (1000 GB)",
+        "factor": 1e12
+      },
+      "petabyte": {
+        "name": "Petabytes (1000 TB)",
+        "factor": 1e15
+      },
+      "exabyte": {
+        "name": "Exabytes (1000 PB)",
+        "factor": 1e18
+      },
+      "zettabyte": {
+        "name": "Zettabytes (1000 EB)",
+        "factor": 1e21
+      },
+      "yottabyte": {
+        "name": "Yottabytes (1000 ZB)",
+        "factor": 1e24
+      }
+    }
+  },
+  "pressure": {
+    "name": "Pressure",
+    "base": "atmosphere",
+    "units": {
+      "atmosphere": {
+        "name": "Atmospheres (atm)",
+        "factor": 1
+      },
+      "pascal": {
+        "name": "Pascals (Pa)",
+        "factor": 101325
+      },
+      "kilopascal": {
+        "name": "Kilopascals (kPa)",
+        "factor": 101.325
+      },
+      "mmhg": {
+        "name": "Millimeters of Mercury (mmHg)",
+        "factor": 760
+      },
+      "bar": {
+        "name": "Bar",
+        "factor": 1.01325
+      },
+      "psi": {
+        "name": "Pounds per Square Inch (psi)",
+        "factor": 14.6959
+      }
+    }
+  },
+  "degree": {
+    "name": "Angle",
+    "base": "degree",
+    "units": {
+      "degree": {
+        "name": "Degrees",
+        "factor": 1
+      },
+      "radian": {
+        "name": "Radians",
+        "factor": 57.2957795
+      },
+      "gradian": {
+        "name": "Gradians",
+        "factor": 0.9
+      }
     }
   }
 }
