@@ -19,7 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function init(data) {
-        console.log(data);
+        const categorySelect = document.getElementById('category-select');
+        const fromSelect = document.getElementById('from-select');
+        const toSelect = document.getElementById('to-select');
+
+        const categories = Object.keys(data);
+        categories.forEach(key => {
+            let option = document.createElement('option');
+            option.text = data[key].name;
+            option.value = key;
+            categorySelect.appendChild(option);
+        })
     }
 
     loadConversionData();

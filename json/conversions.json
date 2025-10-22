@@ -1,17 +1,17 @@
 {
   "length": {
-    "name": "Chiều dài",
+    "name": "Length",
     "base": "meter",
     "units": {
-      "meter": { "name": "Mét", "factor": 1 },
+      "meter": { "name": "Meter", "factor": 1 },
       "feet":  { "name": "Feet", "factor": 0.3048 }
     }
   },
   "volume": {
-    "name": "Thể tích",
+    "name": "Volume",
     "base": "liter",
     "units": {
-      "liter": { "name": "Lít", "factor": 1 }
+      "liter": { "name": "Liter", "factor": 1 }
     }
   }
 }
