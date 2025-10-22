@@ -15,12 +15,18 @@ body {
 }
 
 .number-button:hover {
-    background-color: rgb(231, 230, 230);
+    background-color: rgb(245, 245, 245);
 }
 
 .number-button:active {
-    color: rgb(38, 38, 38);
-    background-color: rgb(213, 213, 213);
+    color: rgb(123, 123, 123);
+    background-color: rgb(235, 235,235);
+}
+
+.number-button img {
+    width: 20%;
+    height: 40%;
+    padding-top: 20px;
 }
 
 #number-pad {

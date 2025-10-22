@@ -1,8 +1,6 @@
-// 1. Giữ lại import. Dữ liệu của bạn nằm trong biến 'conversionData' này.
 import { conversionData } from './conversions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 2. Lấy các element
     const categorySelect = document.getElementById('category-select');
     const fromSelect = document.getElementById('from-select');
     const toSelect = document.getElementById('to-select');
@@ -11,14 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultNumberEl = document.getElementById('result-number');
     const buttons = document.querySelectorAll('.number-button');
 
-    // 3. XÓA 'let conversionData = null;'
     let rawInputString = '0';
     const displayLocale = 'de-DE';
 
-    // 4. CÁC HÀM CỦA BẠN (giữ nguyên)
-    // Các hàm này sẽ tự động dùng 'conversionData' đã được import
     function getConversionResult(numericValue) {
-        if (!conversionData) return 0; // Kiểm tra an toàn
+        if (!conversionData) return 0;
 
         const category = categorySelect.value;
         const fromUnit = fromSelect.value;
@@ -86,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (buttonText == 'AC') {
                 rawInputString = '0';
             } 
-            else if (buttonText == 'B') {
+            else if (button.value == 'backspace') {
                 if (rawInputString.length > 1) {
                     rawInputString = rawInputString.substring(0, rawInputString.length - 1);
                 } else {
@@ -111,8 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Các hàm này (không có tham số) sẽ tự động dùng
-    // 'conversionData' từ import
     function loadCategories() {
         const categories = Object.keys(conversionData);
         categories.forEach(key => {
@@ -147,8 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 5. KHỞI CHẠY ỨNG DỤNG (KHÔNG CẦN 'initApp' hay 'fetch')
-    // Gói trong try/catch để phòng trường hợp data bị lỗi
     try {
         loadCategories();
         updateUnitSelectors();
@@ -166,8 +157,4 @@ document.addEventListener('DOMContentLoaded', () => {
         inputNumberEl.innerText = "Error!";
         resultNumberEl.innerText = "Error loading data.";
     }
-
-    // 6. XÓA 'async function initApp()' và 'initApp()'
 });
-
-// 7. XÓA DẤU '}' THỪA
