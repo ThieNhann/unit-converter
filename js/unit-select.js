@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const categorySelect = document.getElementById('category-select');
+    const fromSelect = document.getElementById('from-select');
+    const toSelect = document.getElementById('to-select');
+
+    loadConversionData();
 
     async function loadConversionData() {
         try {
@@ -10,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
 
-            init(data);
+            loadCategories(data);
+            updateSelectors(data);
+            categorySelect.addEventListener('change', () => {updateSelectors(data)});
         }
 
         catch (error) {
@@ -18,19 +25,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function init(data) {
-        const categorySelect = document.getElementById('category-select');
-        const fromSelect = document.getElementById('from-select');
-        const toSelect = document.getElementById('to-select');
-
+    function loadCategories(data) {
         const categories = Object.keys(data);
         categories.forEach(key => {
-            let option = document.createElement('option');
-            option.text = data[key].name;
-            option.value = key;
-            categorySelect.appendChild(option);
+            //Category options
+            let categoryOption = document.createElement('option');
+            categoryOption.text = data[key].name;
+            categoryOption.value = key;
+            categorySelect.appendChild(categoryOption);
         })
     }
 
-    loadConversionData();
+    function updateSelectors(data) {
+        const selectedCategory = categorySelect.value;
+
+        fromSelect.innerHTML = '';
+        toSelect.innerHTML = '';
+
+        const unitKeys = Object.keys(data[selectedCategory].units);
+
+        unitKeys.forEach(unitKey => {
+            const unitData = data[selectedCategory].units[unitKey];
+
+            const fromOption = document.createElement('option');
+            fromOption.value = unitKey;
+            fromOption.text = unitData.name;
+
+            const toOption = document.createElement('option');
+            toOption.value = unitKey;
+            toOption.text = unitData.name;
+
+            fromSelect.appendChild(fromOption);
+            toSelect.appendChild(toOption);
+        })
+    }
+
 })
