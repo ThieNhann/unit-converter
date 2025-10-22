@@ -1,4 +1,4 @@
-{
+export const conversionData = {
   "length": {
     "name": "Length",
     "base": "meters",

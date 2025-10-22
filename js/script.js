@@ -1,4 +1,8 @@
+// 1. Giữ lại import. Dữ liệu của bạn nằm trong biến 'conversionData' này.
+import { conversionData } from './conversions.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+    // 2. Lấy các element
     const categorySelect = document.getElementById('category-select');
     const fromSelect = document.getElementById('from-select');
     const toSelect = document.getElementById('to-select');
@@ -7,12 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultNumberEl = document.getElementById('result-number');
     const buttons = document.querySelectorAll('.number-button');
 
-    let conversionData = null;
+    // 3. XÓA 'let conversionData = null;'
     let rawInputString = '0';
     const displayLocale = 'de-DE';
 
+    // 4. CÁC HÀM CỦA BẠN (giữ nguyên)
+    // Các hàm này sẽ tự động dùng 'conversionData' đã được import
     function getConversionResult(numericValue) {
-        if (!conversionData) return 0;
+        if (!conversionData) return 0; // Kiểm tra an toàn
 
         const category = categorySelect.value;
         const fromUnit = fromSelect.value;
@@ -105,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // Các hàm này (không có tham số) sẽ tự động dùng
+    // 'conversionData' từ import
     function loadCategories() {
         const categories = Object.keys(conversionData);
         categories.forEach(key => {
@@ -124,15 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         unitKeys.forEach(unitKey => {
             const unitData = conversionData[selectedCategory].units[unitKey];
-
             const fromOption = document.createElement('option');
             fromOption.value = unitKey;
             fromOption.text = unitData.name;
-
             const toOption = document.createElement('option');
             toOption.value = unitKey;
             toOption.text = unitData.name;
-
             fromSelect.appendChild(fromOption);
             toSelect.appendChild(toOption);
         });
@@ -142,33 +147,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function initApp() {
-        try {
-            const response = await fetch('json/conversions.json');
-            if (!response.ok) {
-                throw new Error('Network problem! Status: ' + response.status);
-            }
-            
-            conversionData = await response.json(); 
+    // 5. KHỞI CHẠY ỨNG DỤNG (KHÔNG CẦN 'initApp' hay 'fetch')
+    // Gói trong try/catch để phòng trường hợp data bị lỗi
+    try {
+        loadCategories();
+        updateUnitSelectors();
+        updateDisplay(); 
 
-            loadCategories();
+        categorySelect.addEventListener('change', () => {
             updateUnitSelectors();
-            
-            updateDisplay(); 
+            updateDisplay();
+        });
+        fromSelect.addEventListener('change', updateDisplay);
+        toSelect.addEventListener('change', updateDisplay);
 
-            categorySelect.addEventListener('change', () => {
-                updateUnitSelectors();
-                updateDisplay();
-            });
-            fromSelect.addEventListener('change', updateDisplay);
-            toSelect.addEventListener('change', updateDisplay);
-
-        } catch (error) {
-            console.error('Không thể tải dữ liệu:', error);
-            inputNumberEl.innerText = "Lỗi!";
-            resultNumberEl.innerText = "Lỗi tải data";
-        }
+    } catch (error) {
+        console.error('Lỗi khi khởi tạo từ data:', error);
+        inputNumberEl.innerText = "Error!";
+        resultNumberEl.innerText = "Error loading data.";
     }
 
-    initApp();
+    // 6. XÓA 'async function initApp()' và 'initApp()'
 });
+
+// 7. XÓA DẤU '}' THỪA
